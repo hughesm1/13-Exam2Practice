@@ -278,15 +278,21 @@ class Box(object):
             return ''
         else:
             if new_volume - self.volume < len(self.contents):
-                space = new_volume - len(self.contents)
-            # self.volume = new_volume
-            # self.contents =
-            leftovers = ''
-            if len(self.contents) != space:
-                for k in range(len(self.contents) - space):
-                    self.contents = self.contents[space - k]
-            return leftovers
-            # return self.append_string(self.contents)
+                negspace = len(self.contents) - new_volume
+            stuff = ''
+            stuff2 = ''
+            if len(self.contents) != negspace:
+                for k in range(new_volume, len(self.contents)):
+                    stuff = stuff + self.contents[k]
+            # k = 0
+            # while len(self.contents) <= new_volume:
+            #     stuff = stuff + self.contents[k]
+            #     k = k + 1
+                for k in range(new_volume):
+                    stuff2 = stuff2 + self.contents[k]
+            self.contents = stuff2
+            self.volume = new_volume
+            return stuff
 
     def double_then_shrink(self, new_volume):
         """
