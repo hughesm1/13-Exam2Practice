@@ -44,7 +44,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4    ** tests that, taken together,
     #   would form a    ** REASONABLY GOOD test set **
@@ -61,15 +61,23 @@ def run_test_practice_problem2a():
 
     expected = [6, 4, 12, 4, 7]
     actual = practice_problem2a([3, 1, 9, 1, 4], 3)
+    print('expected:', expected)
+    print('actual:', actual)
 
     expected = [8, 7, 26, 7, 61]
     actual = practice_problem2a([2, 1, 20, 1, 55], 6)
+    print('expected:', expected)
+    print('actual:', actual)
 
     expected = [2, 2, 5, 7, 100]
     actual = practice_problem2a([1, 1, 4, 6, 99], 1)
+    print('expected:', expected)
+    print('actual:', actual)
 
     expected = [3, -4, 8, 65, 3]
     actual = practice_problem2a([4, -3, 9, 66, 4], -1)
+    print('expected:', expected)
+    print('actual:', actual)
 
 def practice_problem2a(sequence, delta):
     """
@@ -90,15 +98,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
+    s = []
     for k in range(len(sequence)):
-        s = sequence[k] + delta
+        s = s + [sequence[k] + delta]
+    return s
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
