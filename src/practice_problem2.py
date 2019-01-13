@@ -79,6 +79,7 @@ def run_test_practice_problem2a():
     print('expected:', expected)
     print('actual:', actual)
 
+
 def practice_problem2a(sequence, delta):
     """
     What comes in:
@@ -109,6 +110,7 @@ def practice_problem2a(sequence, delta):
     for k in range(len(sequence)):
         s = s + [sequence[k] + delta]
     return s
+
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -209,19 +211,26 @@ def practice_problem2b(sequence):
       :type sequence: [str]
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    chars = ''
+    for k in range(len(sequence)):
+        se = sequence[k]
+        if sequence[k] != '':
+            chars = chars + se[0]
 
+    return chars
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
+
 
 def print_expected_result_of_test(arguments, expected,
                                   test_results, format_string, suffix=''):
